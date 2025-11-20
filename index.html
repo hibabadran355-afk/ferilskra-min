@@ -1,0 +1,160 @@
+
+<!doctype html>
+<html lang="en">
+<head> 
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Your Name — CV</title>
+	<meta name="description" content="Curriculum vitae / resume of Your Name" />
+	<style>
+		:root{
+			--bg:#f6f7fb; --card:#ffffff; --muted:#6b7280; --accent:#0f766e;
+			--max-width:900px; --gap:20px; --radius:10px;
+			font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+		}
+		html,body{height:100%;}
+		body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#0b1220;display:flex;align-items:center;justify-content:center;padding:32px}
+		.sheet{width:100%;max-width:var(--max-width);background:var(--card);box-shadow:0 8px 30px rgba(12,18,34,.08);border-radius:var(--radius);overflow:hidden}
+		header{display:flex;gap:var(--gap);padding:28px 32px;border-bottom:1px solid rgba(12,18,34,.06);align-items:center}
+		.photo{flex:0 0 96px;height:96px;background:linear-gradient(135deg,var(--accent),#0ea5a5);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+		.name-block{flex:1}
+		h1{margin:0;font-size:28px;letter-spacing:-0.4px}
+		p.role{margin:6px 0 0;color:var(--muted)}
+		.contact{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+		.pill{background:#f1fbfa;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+		.content{display:grid;grid-template-columns:1fr 320px;gap:var(--gap);padding:24px 32px}
+		@media (max-width:880px){.content{grid-template-columns:1fr;}}
+		section{background:transparent}
+		.card{background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.6));padding:18px;border-radius:10px}
+
+		h2{margin:0 0 10px;font-size:16px}
+		.muted{color:var(--muted);font-size:14px}
+
+		/* Experience list */
+		.exp{display:flex;flex-direction:column;gap:12px}
+		.job{display:block}
+		.job .title{font-weight:700}
+		.job .meta{color:var(--muted);font-size:13px;margin-top:4px}
+		.job p{margin:8px 0 0;color:#111827}
+
+		/* skills */
+		.skills{display:flex;flex-wrap:wrap;gap:8px}
+		.skill{background:#eef6f5;padding:6px 8px;border-radius:8px;font-weight:600;color:var(--accent);font-size:13px}
+
+		/* education & footer */
+		.small{font-size:13px;color:var(--muted)}
+
+		/* print friendly */
+		@media print{
+			body{background:white;padding:0}
+			.sheet{box-shadow:none;border-radius:0}
+			header, .content{padding:12px}
+			.photo{display:none}
+			.content{grid-template-columns:1fr 260px}
+		}
+
+		/* top controls */
+		.controls{display:flex;gap:8px}
+		button.cta{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+		button.ghost{background:transparent;border:1px solid rgba(12,18,34,.06);padding:8px 12px;border-radius:8px;cursor:pointer}
+	</style>
+</head>
+<body>
+	<div class="sheet" role="main">
+		<header>
+			<div class="photo" aria-hidden="true">HB</div>
+			<div class="name-block">
+				<h1>Hiba Badran</h1>
+				<p class="role">Student • Reykjavík, Iceland</p>
+				<div class="contact">
+					<span class="pill">hiba.badran.1@icloud.com</span>
+					<span class="pill">8331141</span>
+					<span class="pill">Reykjavík 105, Iceland</span>
+				</div>
+			</div>
+			<div style="margin-left:auto;display:flex;align-items:center">
+				<div class="controls">
+					<button class="cta" onclick="window.print()">Print / Save PDF</button>
+					<button class="ghost" onclick="downloadVCard()">Download vCard</button>
+				</div>
+			</div>
+		</header>
+
+		<div class="content">
+			<main>
+				<section class="card">
+					<h2>Profile</h2>
+					<p class="muted">I am Hiba Badran, 20 years old, currently studying at Tækniskólinn (started 18/08/2025). Previously employed for 3 years at a cosmetics company in Palestine (Jan 2020 — Dec 2022). I have gained experience in the job market, customer service, and e-marketing and I'm seeking to build on these skills while completing my studies.</p>
+				</section>
+
+				<section style="margin-top:16px" class="card">
+					<h2>Experience</h2>
+					<div class="exp">
+						<div class="job">
+							<div class="title">Sales & E-marketing — Cosmetics Company, Palestine</div>
+							<div class="meta">Jan 2020 — Dec 2022 • Palestine</div>
+							<p>Three years of hands-on experience working in retail cosmetics: customer service, sales support, and e-marketing activities. Gained strong communication, client relations, and practical marketing experience in the local market.</p>
+						</div>
+					</div>
+				</section>
+
+				<section style="margin-top:16px" class="card">
+					<h2>Projects</h2>
+					<div>
+						<strong>—</strong> — <span class="small">No public projects listed.</span>
+						<p class="muted">You can add relevant school assignments, marketing campaigns, or volunteer work here.</p>
+					</div>
+				</section>
+			</main>
+
+			<aside>
+				<section class="card">
+					<h2>Skills</h2>
+					<div class="skills">
+						<span class="skill">Job market knowledge</span>
+						<span class="skill">Customer service</span>
+						<span class="skill">E-marketing</span>
+						<span class="skill">Communication</span>
+						<span class="skill">Sales</span>
+					</div>
+				</section>
+
+				<section style="margin-top:12px" class="card">
+					<h2>Education</h2>
+					<div>
+						<div class="small"><strong>Student</strong><br/>Tækniskólinn — Studies started 18/08/2025 (ongoing)</div>
+					</div>
+				</section>
+
+				<section style="margin-top:12px;text-align:center" class="card">
+					<h2>Languages</h2>
+					<div class="small">English<br/>Icelandic<br/>Arabic</div>
+				</section>
+			</aside>
+		</div>
+		<footer style="padding:14px 32px;border-top:1px solid rgba(12,18,34,.04);display:flex;justify-content:space-between;align-items:center">
+			<div class="small">Last updated: <span id="updated">2025-11-18</span></div>
+			<div class="small">Generated with your personal CV template</div>
+		</footer>
+	</div>
+
+	<script>
+		function downloadVCard(){
+			const vcard = [
+				'BEGIN:VCARD',
+				'VERSION:3.0',
+				'FN:Your Name',
+				'EMAIL;TYPE=work:you@example.com',
+				'TEL;TYPE=work:+123456789',
+				'END:VCARD'
+			].join('\n');
+			const blob = new Blob([vcard], {type: 'text/vcard'});
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			a.href = url; a.download = 'your-name.vcf';
+			document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+		}
+	</script>
+</body>
+</html>
